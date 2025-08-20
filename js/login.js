@@ -38,7 +38,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
       if (uan && password) {
         // Redirect to home page after successful login
-        window.location.href = 'home.html';
+        window.location.href = '../home/home.html';
       } else {
         alert('Please fill in all fields!');
       }
