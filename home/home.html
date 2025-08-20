@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EPFO Passbook Replica</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="../css/bannerNavbar.css">
+</head>
+<body>
+
+  <!-- Banner -->
+  <div class="banner"> 
+    <div class="bannerone" >
+      <p>For EPF Balance Enquiry:<br></p>
+      <p>1. Give a Missed call to <b>9966044425</b><br></p>
+      <p>2. SMS <b>EPFOHO UAN &lt;LAN&gt;</b> to <b>7738299899</b></p>
+      <p style="margin-left: 600px;"><b>Help Desk/Toll Free Number:</b> 1800118005</p>
+    </div>
+  <div class="bannerSecond">
+    <div class="banner-left">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/1/16/Emblem_of_India.svg" alt="National Emblem">
+      <div class="banner-text">
+        <div class="hindi"><h1>कर्मचारी भविष्य निधि संगठन</h1></div>
+        <h1 class="english">Employees' Provident Fund Organisation (EPFO)</h1>
+        <div class="ministry">(श्रम एवं रोजगार मंत्रालय, भारत सरकार)</div>
+        <div class="ministry">(Ministry of Labour & Employment, Govt. of India)</div>
+      </div>
+    </div>
+    <div class="banner-right">
+      <img src="https://www.g20.org/content/dam/gtwenty/header-footer/logo-g20.svg" alt="G20">
+      <img src="https://www.amritmahotsav.nic.in/writereaddata/images/amritlogo.png" alt="Azadi Ka Amrit Mahotsav">
+    </div>
+  </div>
+</div>
+  <!-- Navbar -->
+  <nav>
+    <ul>
+      <li class="active">Home</li>
+      <li><a href="../profile/profile.html" style="color: white; text-decoration: none;">Profile</a></li>
+      <li>Passbook</li>
+      <li><a href="../claim/claims.html" style="color: white; text-decoration: none;">Claim</a></li>
+      <li><a href="../service/service-history.html" style="color: white; text-decoration: none;">Service History</a></li>
+      <li>Calculators
+        <ul>
+          <li>EPF Calculator</li>
+          <li>EDLI Calculator</li>
+          <li>Pension Calculator</li>
+        </ul>
+      </li>
+    </ul>
+    <div class="user-section">
+      <span class="user-name">SAJEELA K</span>
+      <button class="logout-btn">Logout</button>
+    </div>
+  </nav>
+
+  <!-- Help Info -->
+  
+  <!-- Top Section -->
+  <div class="container">
+    <!-- Left: Pie Chart -->
+    <div class="card">
+      <h2>EPF Contribution Summary</h2>
+      <div class="chart-container">
+        <canvas id="contributionChart"></canvas>
+      </div>
+      <div class="total">Total Available Balance: ₹ 1,55,184</div>
+    </div>
+
+    <!-- Right: Member balances -->
+    <div class="card">
+      <h2>Member Wise Balance</h2>
+      <div class="balance-list">
+        <div class="balance-item"><span>1. KDMAL00415050005043918</span> <b>₹ 1,35,514</b></div>
+        <div class="balance-item"><span>2. PYBOM00130150001085403</span> <b>₹ 0</b></div>
+        <div class="balance-item"><span>3. TBTAM00496940000660048</span> <b>₹ 0</b></div>
+        <div class="balance-item"><span>4. TNMAS00544340000010487</span> <b>₹ 0</b></div>
+        <div class="balance-item"><span>5. TNMAS00503240000016034</span> <b>₹ 0</b></div>
+        <div class="balance-item"><span>6. APHYD14894460000085845</span> <b>₹ 761</b></div>
+      </div>
+      <div class="total-balance">Total Balance ₹ 1,36,275</div>
+    </div>
+  </div>
+
+  <!-- Bottom Section -->
+  <div class="bottom">
+    <!-- Establishment details -->
+    <div class="card">
+      <h2>Current Establishment Details</h2>
+      <p><b>Est. Name:</b> SYNTEL PVT. LTD.</p>
+      <p><b>Est. Id:</b> KDMAL0041505000</p>
+      <p><b>Member Id:</b> KDMAL00415050005043918</p>
+      <p><b>Date of Joining:</b> 08-12-2021</p>
+      <p><b>Experience:</b> 3 Years 3 Months 6 Days</p>
+      <button>View Past Service History</button>
+    </div>
+
+    <!-- Pending requests -->
+    <div class="card">
+      <h2>Your Pending Requests</h2>
+      <p>No Request Pending</p>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    EPFO | Member Portal | EPFO Grievance Portal <br>
+    © Employees' Provident Fund Organisation, Designed, Developed and Hosted @ DR, Secunderabad <br>
+    [ Ver - 1.2.17 , 08-Jul-2025 ]
+  </footer>
+
+  <!-- Chart.js -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script>
+    const ctx = document.getElementById('contributionChart').getContext('2d');
+    new Chart(ctx, {
+      type: 'doughnut',
+      data: {
+        labels: ['Employee Share: ₹117,445', 'Employer Share: ₹37,739'],
+        datasets: [{
+          data: [117445, 37739],
+          backgroundColor: ['#f06292', '#42a5f5']
+        }]
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        plugins: {
+          legend: { position: 'bottom' }
+        }
+      }
+    });
+  </script>
+
+</body>
+</html>

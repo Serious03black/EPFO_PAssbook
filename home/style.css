@@ -1,0 +1,82 @@
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background: #f4f6f9;
+}
+
+
+/* Layout */
+.container {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 20px;
+  padding: 20px;
+}
+
+.card {
+  background: white;
+  padding: 18px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.card h2 {
+  margin-top: 0;
+  color: #1976d2;
+}
+
+.total {
+  font-size: 20px;
+  font-weight: bold;
+  margin-top: 10px;
+  color: green;
+}
+
+/* Chart container - reduced by 70% */
+.chart-container {
+  width: 40%;
+  height: 300px;
+  margin: 0 auto;
+}
+
+/* Right side list */
+.balance-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.balance-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 9px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  background: #f9f9f9;
+}
+.total-balance {
+  margin-top: 10px;
+  padding: 9px;
+  font-weight: bold;
+  text-align: right;
+  background: #eee;
+  border-radius: 6px;
+}
+
+/* Bottom section */
+.bottom {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 20px;
+  padding: 0 20px 20px;
+}
+
+/* Footer */
+footer {
+  background: #2f2f2f;
+  color: white;
+  text-align: center;
+  font-size: 12px;
+  padding: 15px;
+}

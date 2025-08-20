@@ -1,0 +1,52 @@
+/* Footer Styles */
+footer {
+  background: #2f2f2f;
+  color: white;
+  text-align: center;
+  font-size: 12px;
+  padding: 15px;
+  margin-top: 40px;
+}
+
+.footer-links {
+  margin-bottom: 10px;
+}
+
+.footer-links a {
+  color: white;
+  text-decoration: none;
+  margin: 0 10px;
+}
+
+.footer-links a:hover {
+  text-decoration: underline;
+}
+
+/* Responsive Footer */
+@media (max-width: 768px) {
+  footer {
+    padding: 10px;
+    font-size: 11px;
+  }
+  
+  .footer-links a {
+    margin: 0 5px;
+    font-size: 11px;
+  }
+}
+
+@media (max-width: 480px) {
+  footer {
+    padding: 8px;
+    font-size: 10px;
+  }
+  
+  .footer-links {
+    margin-bottom: 8px;
+  }
+  
+  .footer-links a {
+    margin: 0 3px;
+    font-size: 10px;
+  }
+}

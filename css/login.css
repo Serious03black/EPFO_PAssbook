@@ -1,0 +1,255 @@
+/* Login Page Specific Styles */
+
+/* Warning Banner */
+.warning-banner {
+  background: #1976d2;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+/* Social Media Sidebar */
+.social-sidebar {
+  position: fixed;
+  left: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  z-index: 100;
+}
+
+.social-icon {
+  width: 40px;
+  height: 40px;
+  background: #1976d2;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.3s;
+  font-size: 18px;
+}
+
+.social-icon:hover {
+  background: #1565c0;
+  transform: scale(1.1);
+}
+
+/* Quick Links */
+.quick-links {
+  text-align: center;
+  margin: 20px 0;
+}
+
+.quick-links a {
+  color: #1976d2;
+  text-decoration: none;
+  margin: 0 15px;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.quick-links a:hover {
+  color: #1565c0;
+  text-decoration: underline;
+}
+
+/* Main Content */
+.main-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 60vh;
+  padding: 40px 20px;
+}
+
+/* Login Form */
+.login-container {
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+  padding: 30px;
+  width: 100%;
+  max-width: 400px;
+  text-align: center;
+}
+
+.login-header {
+  margin-bottom: 25px;
+}
+
+.login-header h2 {
+  color: #1976d2;
+  margin: 0 0 5px 0;
+  font-size: 20px;
+}
+
+.login-header .subtitle {
+  color: #666;
+  font-size: 14px;
+}
+
+.lock-icon {
+  font-size: 24px;
+  color: #1976d2;
+  margin-bottom: 10px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
+  color: #333;
+  font-weight: 500;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 14px;
+  box-sizing: border-box;
+  transition: border-color 0.3s;
+}
+
+.form-group input:focus {
+  outline: none;
+  border-color: #1976d2;
+  box-shadow: 0 0 0 2px rgba(25, 118, 210, 0.1);
+}
+
+.captcha-section {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.captcha-image {
+  background: #f5f5f5;
+  padding: 10px 15px;
+  border-radius: 6px;
+  font-family: 'Courier New', monospace;
+  font-size: 18px;
+  font-weight: bold;
+  color: #d32f2f;
+  text-decoration: line-through;
+  min-width: 80px;
+  text-align: center;
+}
+
+.refresh-btn {
+  background: none;
+  border: none;
+  font-size: 20px;
+  color: #1976d2;
+  cursor: pointer;
+  padding: 5px;
+  border-radius: 4px;
+  transition: background-color 0.3s;
+}
+
+.refresh-btn:hover {
+  background: #e3f2fd;
+}
+
+.signin-btn {
+  width: 100%;
+  background: #1976d2;
+  color: white;
+  border: none;
+  padding: 14px;
+  border-radius: 6px;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.signin-btn:hover {
+  background: #1565c0;
+}
+
+.arrow-icon {
+  font-size: 18px;
+}
+
+/* Responsive Login */
+@media (max-width: 768px) {
+  .main-content {
+    padding: 20px 15px;
+    min-height: 50vh;
+  }
+  
+  .login-container {
+    padding: 25px;
+  }
+  
+  .social-sidebar {
+    left: 15px;
+  }
+  
+  .social-icon {
+    width: 35px;
+    height: 35px;
+    font-size: 16px;
+  }
+  
+  .quick-links a {
+    margin: 0 10px;
+    font-size: 14px;
+  }
+  
+  .warning-banner {
+    font-size: 14px;
+    padding: 8px 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .main-content {
+    padding: 15px 10px;
+  }
+  
+  .login-container {
+    padding: 20px;
+  }
+  
+  .login-header h2 {
+    font-size: 18px;
+  }
+  
+  .form-group input {
+    padding: 10px;
+    font-size: 14px;
+  }
+  
+  .signin-btn {
+    padding: 12px;
+    font-size: 15px;
+  }
+  
+  .social-sidebar {
+    display: none;
+  }
+  
+  .quick-links a {
+    margin: 0 8px;
+    font-size: 13px;
+  }
+}
