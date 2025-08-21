@@ -5,10 +5,7 @@ function initializeLogout() {
   const logoutBtn = document.querySelector('.logout-btn');
   if (logoutBtn) {
     logoutBtn.addEventListener('click', function() {
-      if (confirm('क्या आप लॉगआउट करना चाहते हैं?')) {
-        // Redirect to login page
-        window.location.href = 'index.html';
-      }
+        window.location.href = '../index.html';
     });
   }
 }

@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>EPFO Passbook Replica</title>
+  <title>EPFO Passbook</title>
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="../css/bannerNavbar.css">
 </head>
@@ -38,7 +38,7 @@
     <ul>
       <li class="active">Home</li>
       <li><a href="../profile/profile.html" style="color: white; text-decoration: none;">Profile</a></li>
-      <li>Passbook</li>
+      <li ><a href="../passbook/passbook.html" style="color: white; text-decoration: none;">Passbook</a></li>
       <li><a href="../claim/claims.html" style="color: white; text-decoration: none;">Claim</a></li>
       <li><a href="../service/service-history.html" style="color: white; text-decoration: none;">Service History</a></li>
       <li>Calculators
@@ -77,9 +77,9 @@
         <div class="balance-item"><span>3. TBTAM00496940000660048</span> <b>₹ 0</b></div>
         <div class="balance-item"><span>4. TNMAS00544340000010487</span> <b>₹ 0</b></div>
         <div class="balance-item"><span>5. TNMAS00503240000016034</span> <b>₹ 0</b></div>
-        <div class="balance-item"><span>6. APHYD14894460000085845</span> <b>₹ 761</b></div>
+        <div class="balance-item"><span>6. APHYD14894460000085845</span> <b>₹ 0</b></div>
       </div>
-      <div class="total-balance">Total Balance ₹ 1,36,275</div>
+      <div class="total-balance">Total Balance ₹ 1,35,514</div>
     </div>
   </div>
 
@@ -93,7 +93,7 @@
       <p><b>Member Id:</b> KDMAL00415050005043918</p>
       <p><b>Date of Joining:</b> 08-12-2021</p>
       <p><b>Experience:</b> 3 Years 3 Months 6 Days</p>
-      <button>View Past Service History</button>
+      <button><a href="../service/service-history.html">View Past Service History</a></button>
     </div>
 
     <!-- Pending requests -->
@@ -112,6 +112,8 @@
 
   <!-- Chart.js -->
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="../js/common.js"></script>
+
   <script>
     const ctx = document.getElementById('contributionChart').getContext('2d');
     new Chart(ctx, {

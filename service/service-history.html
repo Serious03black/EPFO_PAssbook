@@ -3,275 +3,43 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>EPFO Service History - Member Portal</title>
-    <link rel="stylesheet" href="../css/bannerNavbar.css">
+  <title>EPFO Passbook</title>
+  <link rel="stylesheet" href="../css/bannerNavbar.css">
+  <link rel="stylesheet" href="style.css">
 
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: #f4f6f9;
-    }
-
-    /* Help Info Banner */
-    .help-banner {
-      background: #e3f2fd;
-      padding: 15px 20px;
-      border-bottom: 1px solid #bbdefb;
-    }
-    .help-banner p {
-      margin: 5px 0;
-      font-size: 14px;
-      color: #1976d2;
-    }
-
-    /* Main Content */
-    .main-content {
-      padding: 20px;
-      display: grid;
-      grid-template-columns: 1fr 2fr;
-      gap: 20px;
-      max-width: 1400px;
-      margin: 0 auto;
-    }
-
-    /* Left Column - Service Overview & Member ID */
-    .left-column {
-      display: flex;
-      flex-direction: column;
-      gap: 20px;
-    }
-
-    /* Service Overview Card */
-    .service-overview {
-      background: white;
-      border-radius: 8px;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-      padding: 20px;
-    }
-    .service-overview h2 {
-      color: #1976d2;
-      margin-top: 0;
-      border-bottom: 3px solid #ff9800;
-      padding-bottom: 10px;
-      font-size: 18px;
-    }
-    .overview-item {
-      margin-bottom: 15px;
-    }
-    .overview-label {
-      font-size: 14px;
-      color: #666;
-      margin-bottom: 5px;
-    }
-    .overview-value {
-      background: #f5f5f5;
-      padding: 8px 12px;
-      border-radius: 20px;
-      font-size: 14px;
-      font-weight: 500;
-      color: #333;
-      display: inline-block;
-    }
-
-    /* Member ID Service Length Card */
-    .member-service-length {
-      background: white;
-      border-radius: 8px;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-      padding: 20px;
-    }
-    .member-service-length h2 {
-      color: #1976d2;
-      margin-top: 0;
-      border-bottom: 3px solid #ff9800;
-      padding-bottom: 10px;
-      font-size: 18px;
-    }
-    .member-item {
-      display: flex;
-      align-items: center;
-      margin-bottom: 12px;
-      gap: 15px;
-    }
-    .member-id {
-      font-size: 12px;
-      color: #333;
-      font-family: monospace;
-      min-width: 200px;
-    }
-    .service-bar {
-      height: 8px;
-      border-radius: 4px;
-      flex-grow: 1;
-    }
-    .service-bar.red {
-      background: #d32f2f;
-    }
-    .service-bar.pink {
-      background: #e91e63;
-    }
-
-    /* Right Column - Service History */
-    .service-history {
-      background: white;
-      border-radius: 8px;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-      padding: 20px;
-    }
-    .service-history h2 {
-      color: #1976d2;
-      margin-top: 0;
-      border-bottom: 3px solid #ff9800;
-      padding-bottom: 10px;
-      font-size: 18px;
-    }
-    .timeline {
-      position: relative;
-      margin-top: 30px;
-    }
-    .timeline::before {
-      content: '';
-      position: absolute;
-      left: 25px;
-      top: 0;
-      bottom: 0;
-      width: 3px;
-      background: #1976d2;
-    }
-    .timeline-item {
-      position: relative;
-      margin-bottom: 30px;
-      padding-left: 70px;
-    }
-    .timeline-item::before {
-      content: '';
-      position: absolute;
-      left: 16px;
-      top: 0;
-      width: 20px;
-      height: 20px;
-      border-radius: 50%;
-      background: #ff9800;
-      border: 3px solid white;
-      box-shadow: 0 0 0 3px #ff9800;
-      z-index: 1;
-    }
-    .timeline-content {
-      background: #f8f9fa;
-      border-radius: 8px;
-      padding: 20px;
-      border-left: 4px solid #1976d2;
-    }
-    .time-period {
-      background: #e3f2fd;
-      color: #1976d2;
-      padding: 5px 12px;
-      border-radius: 15px;
-      font-size: 12px;
-      font-weight: 500;
-      display: inline-block;
-      margin-bottom: 10px;
-    }
-    .company-name {
-      font-size: 16px;
-      font-weight: bold;
-      color: #1976d2;
-      margin-bottom: 15px;
-    }
-    .service-details {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-      gap: 10px;
-    }
-    .detail-item {
-      display: flex;
-      justify-content: space-between;
-      padding: 6px 0;
-      border-bottom: 1px solid #eee;
-      font-size: 13px;
-    }
-    .detail-item:last-child {
-      border-bottom: none;
-    }
-    .detail-label {
-      font-weight: 500;
-      color: #666;
-    }
-    .detail-value {
-      color: #333;
-      font-weight: 500;
-    }
-    .calendar-icon {
-      color: #999;
-      margin-right: 5px;
-    }
-
-    /* Footer */
-    footer {
-      background: #2f2f2f;
-      color: white;
-      text-align: center;
-      font-size: 12px;
-      padding: 15px;
-      margin-top: 40px;
-    }
-    .footer-links {
-      margin-bottom: 10px;
-    }
-    .footer-links a {
-      color: white;
-      text-decoration: none;
-      margin: 0 10px;
-    }
-    .footer-links a:hover {
-      text-decoration: underline;
-    }
-
-    /* Responsive Design */
-    @media (max-width: 768px) {
-      .main-content {
-        grid-template-columns: 1fr;
-      }
-      .service-details {
-        grid-template-columns: 1fr;
-      }
-    }
-  </style>
 </head>
 <body>
-
   <!-- Banner -->
-   <div class="banner"> 
-    <div class="bannerone" >
+  <div class="banner"> 
+    <div class="bannerone">
       <p>For EPF Balance Enquiry:<br></p>
       <p>1. Give a Missed call to <b>9966044425</b><br></p>
       <p>2. SMS <b>EPFOHO UAN &lt;LAN&gt;</b> to <b>7738299899</b></p>
       <p style="margin-left: 600px;"><b>Help Desk/Toll Free Number:</b> 1800118005</p>
     </div>
-  <div class="bannerSecond">
-    <div class="banner-left">
-      <img src="../assets/logo.png" alt="National Emblem" style="width: 150px;height: 120px;">
-      <div class="banner-text">
-        <div class="hindi"><h1>कर्मचारी भविष्य निधि संगठन</h1></div>
-        <h1 class="english">Employees' Provident Fund Organisation (EPFO)</h1>
-        <div class="ministry">(श्रम एवं रोजगार मंत्रालय, भारत सरकार)</div>
-        <div class="ministry">(Ministry of Labour & Employment, Govt. of India)</div>
+    <div class="bannerSecond">
+      <div class="banner-left">
+        <img src="../assets/logo.png" alt="National Emblem" style="width: 150px;height: 120px;">
+        <div class="banner-text">
+          <div class="hindi"><h1>कर्मचारी भविष्य निधि संगठन</h1></div>
+          <h1 class="english">Employees' Provident Fund Organisation (EPFO)</h1>
+          <div class="ministry">(श्रम एवं रोजगार मंत्रालय, भारत सरकार)</div>
+          <div class="ministry">(Ministry of Labour & Employment, Govt. of India)</div>
+        </div>
+      </div>
+      <div class="banner-right">
+        <img src="../assets/G20.png" alt="G20" style="height: 150px;">
+        <img src="../assets/image.png" alt="Azadi Ka Amrit Mahotsav" style="height: 150px;">
       </div>
     </div>
-    <div class="banner-right">
-      <img src="../assets/G20.png" alt="G20" style="height: 150px;">
-      <img src="../assets/image.png" alt="Azadi Ka Amrit Mahotsav" style="height: 150px;">
-    </div>
   </div>
-</div>
 
   <!-- Navbar -->
   <nav>
     <ul>
       <li><a href="../home/home.html" style="color: white; text-decoration: none;">Home</a></li>
       <li><a href="../profile/profile.html" style="color: white; text-decoration: none;">Profile</a></li>
-      <li>Passbook</li>
+      <li ><a href="../passbook/passbook.html" style="color: white; text-decoration: none;">Passbook</a></li>
       <li><a href="../claim/claims.html" style="color: white; text-decoration: none;">Claims</a></li>
       <li class="active">Service History</li>
       <li>Calculators
@@ -284,17 +52,14 @@
     </ul>
     <div class="user-section">
       <span class="user-name">SAJEELA K</span>
-      <button class="logout-btn">लॉगआउट</button>
+      <button class="logout-btn">Logout</button>
     </div>
   </nav>
 
-
   <!-- Main Content -->
   <div class="main-content">
-    
     <!-- Left Column -->
     <div class="left-column">
-      
       <!-- Service Overview Card -->
       <div class="service-overview">
         <h2>Service Overview</h2>
@@ -325,29 +90,27 @@
         </div>
         <div class="member-item">
           <div class="member-id">APHYD14894460000085845</div>
-          <div class="service-bar red" style="width: 60%;"></div>
+          <div class="service-bar red" style="width: 10%;"></div>
         </div>
         <div class="member-item">
           <div class="member-id">TBTAM00496940000660048</div>
-          <div class="service-bar red" style="width: 45%;"></div>
+          <div class="service-bar red" style="width: 5%;"></div>
         </div>
         <div class="member-item">
           <div class="member-id">TNMAS00503240000016034</div>
-          <div class="service-bar red" style="width: 55%;"></div>
+          <div class="service-bar red" style="width: 5%;"></div>
         </div>
         <div class="member-item">
           <div class="member-id">PYBOM00130150001085403</div>
           <div class="service-bar pink" style="width: 70%;"></div>
         </div>
       </div>
-
     </div>
 
     <!-- Right Column - Service History -->
     <div class="service-history">
       <h2>Service History</h2>
       <div class="timeline">
-        
         <div class="timeline-item">
           <div class="timeline-content">
             <div class="time-period">Dec 2021 - Mar 2025</div>
@@ -358,7 +121,7 @@
                 <span class="detail-value">KDMAL0041505000</span>
               </div>
               <div class="detail-item">
-                <span class="detail-label">Member Id:</span>
+                  <span class="detail-label">Member Id:</span>
                 <span class="detail-value">KDMAL00415050005043918</span>
               </div>
               <div class="detail-item">
@@ -388,11 +151,11 @@
             <div class="service-details">
               <div class="detail-item">
                 <span class="detail-label">Est Id:</span>
-                <span class="detail-value">APHYD1489446000</span>
+                <span class="detail-value">TNMAS0054434000</span>
               </div>
               <div class="detail-item">
                 <span class="detail-label">Member Id:</span>
-                <span class="detail-value">APHYD14894460000085845</span>
+                <span class="detail-value">TNMAS00544340000010487</span>
               </div>
               <div class="detail-item">
                 <span class="detail-label">NCP Days:</span>
@@ -421,11 +184,11 @@
             <div class="service-details">
               <div class="detail-item">
                 <span class="detail-label">Est Id:</span>
-                <span class="detail-value">TBTAM0049694000</span>
+                <span class="detail-value">APHYD1489446000</span>
               </div>
               <div class="detail-item">
                 <span class="detail-label">Member Id:</span>
-                <span class="detail-value">TBTAM00496940000660048</span>
+                <span class="detail-value">APHYD14894460000085845</span>
               </div>
               <div class="detail-item">
                 <span class="detail-label">NCP Days:</span>
@@ -447,9 +210,106 @@
           </div>
         </div>
 
+        <div class="timeline-item">
+          <div class="timeline-content">
+            <div class="time-period">Feb 2021 - Feb 2021</div>
+            <div class="company-name">SUTHERLAND GLOBAL SERVICES P LTD</div>
+            <div class="service-details">
+              <div class="detail-item">
+                <span class="detail-label">Est Id:</span>
+                <span class="detail-value">TBTAM0049694000</span>
+              </div>
+              <div class="detail-item">
+                <span class="detail-label webmaster@epfindia.gov.in">Member Id:</span>
+                <span class="detail-value">TBTAM00496940000660048</span>
+              </div>
+              <div class="detail-item">
+                <span class="detail-label">NCP Days:</span>
+                <span class="detail-value">14 Days</span>
+              </div>
+              <div class="detail-item">
+                <span class="detail-label">Joining Date:</span>
+                <span class="detail-value"><span class="calendar-icon">📅</span>17-Feb-2021</span>
+              </div>
+              <div class="detail-item">
+                <span class="detail-label">Exit Date:</span>
+                <span class="detail-value"><span class="calendar-icon">📅</span>17-Feb-2021</span>
+              </div>
+              <div class="detail-item">
+                <span class="detail-label">Total Service:</span>
+                <span class="detail-value">0 Years 0 Months 0 Days</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-content">
+            <div class="time-period">Nov 2020 - Nov 2020</div>
+            <div class="company-name">ASPIRE SYSTEMS (INDIA) PVT LIMITED</div>
+            <div class="service-details">
+              <div class="detail-item">
+                <span class="detail-label">Est Id:</span>
+                <span class="detail-value">TNMAS0050324000</span>
+              </div>
+              <div class="detail-item">
+                <span class="detail-label">Member Id:</span>
+                <span class="detail-value">TNMAS00503240000016034</span>
+              </div>
+              <div class="detail-item">
+                <span class="detail-label">NCP Days:</span>
+                <span class="detail-value">0 Days</span>
+              </div>
+              <div class="detail-item">
+                <span class="detail-label">Joining Date:</span>
+                <span class="detail-value"><span class="calendar-icon">📅</span>18-Nov-2020</span>
+              </div>
+              <div class="detail-item">
+                <span class="detail-label">Exit Date:</span>
+                <span class="detail-value"><span class="calendar-icon">📅</span>18-Nov-2020</span>
+              </div>
+              <div class="detail-item">
+                <span class="detail-label">Total Service:</span>
+                <span class="detail-value">0 Years 0 Months 0 Days</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-content">
+            <div class="time-period">Jan 2020 - NA</div>
+            <div class="company-name">EIT SERVICES INDIA PRIVATE LIMITED</div>
+            <div class="service-details">
+              <div class="detail-item">
+                <span class="detail-label">Est Id:</span>
+                <span class="detail-value">PYBOM0013015000</span>
+              </div>
+              <div class="detail-item">
+                <span class="detail-label">Member Id:</span>
+                <span class="detail-value">PYBOM00130150001085403</span>
+              </div>
+              <div class="detail-item">
+                <span class="detail-label">NCP Days:</span>
+                <span class="detail-value">0 Days</span>
+              </div>
+              <div class="detail-item">
+                <span class="detail-label">Joining Date:</span>
+                <span class="detail-value"><span class="calendar-icon">📅</span>19-Jan-2020</span>
+              </div>
+              <div class="detail-item">
+                <span class="detail-label">Exit Date:</span>
+                <span class="detail-value"><span class="calendar-icon">📅</span>21-Jan-2020</span>
+              </div>
+              <div class="detail-item">
+                <span class="detail-label">Total Service:</span>
+                <span class="detail-value">0 Years 9 Months 2 Days</span>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
-
   </div>
 
   <!-- Footer -->
@@ -462,6 +322,7 @@
     © Employees' Provident Fund Organisation, Designed, Developed and Hosted @ DR, Secunderabad<br>
     [ Ver - 1.2.17 , 08-Jul-2025 ]
   </footer>
+  <script src="../js/common.js"></script>
 
   <script>
     // Logout functionality
@@ -469,6 +330,5 @@
         window.location.href = 'login.html';
     });
   </script>
-
 </body>
 </html>

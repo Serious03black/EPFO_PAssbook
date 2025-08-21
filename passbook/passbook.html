@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EPFO Passbook</title>
+  <link rel="stylesheet" href="../css/bannerNavbar.css">
+  <link rel="stylesheet" href="../css/footer.css">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f8f9fc;
+      margin: 0;
+      padding: 0;
+    }
+    .container {
+      max-width: 1000px;
+      margin: auto;
+    }
+    .card {
+      background: #fff;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      padding: 20px;
+      margin-bottom: 20px;
+    }
+    h2 {
+      color: #003366;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 15px;
+    }
+    table th, table td {
+      padding: 12px;
+      border: 1px solid #ddd;
+      text-align: center;
+    }
+    table th {
+      background: #f0f4fa;
+      font-weight: bold;
+    }
+    .highlight {
+      color: white;
+      background: #007bff;
+      font-weight: bold;
+      border-radius: 4px;
+      padding: 5px 10px;
+    }
+    .danger {
+      color: white;
+      background: #dc3545;
+      border-radius: 4px;
+      padding: 5px 10px;
+    }
+    .note {
+      font-size: 14px;
+      color: gray;
+      margin-top: 10px;
+    }
+    canvas {
+      margin-top: 20px;
+    }
+    .member-select {
+        
+      margin-bottom: 15px;
+      background-color: rgba(164, 158, 158, 0.158);
+      
+    }
+    select {
+      padding: 5px;
+      font-size: 14px;
+      border-radius: 4px;
+      border: 1px solid #ccc;
+    }
+  </style>
+</head>
+<body>
+        <div class="banner"> 
+    <div class="bannerone" >
+      <p>For EPF Balance Enquiry:<br></p>
+      <p>1. Give a Missed call to <b>9966044425</b><br></p>
+      <p>2. SMS <b>EPFOHO UAN &lt;LAN&gt;</b> to <b>7738299899</b></p>
+      <p style="margin-left: 600px;"><b>Help Desk/Toll Free Number:</b> 1800118005</p>
+    </div>
+  <div class="bannerSecond">
+    <div class="banner-left">
+      <img src="../assets/logo.png" alt="National Emblem" style="width: 150px;height: 120px;">
+      <div class="banner-text">
+        <div class="hindi"><h1>कर्मचारी भविष्य निधि संगठन</h1></div>
+        <h1 class="english">Employees' Provident Fund Organisation (EPFO)</h1>
+        <div class="ministry">(श्रम एवं रोजगार मंत्रालय, भारत सरकार)</div>
+        <div class="ministry">(Ministry of Labour & Employment, Govt. of India)</div>
+      </div>
+    </div>
+    <div class="banner-right">
+      <img src="../assets/G20.png" alt="G20" style="height: 150px;">
+      <img src="../assets/image.png" alt="Azadi Ka Amrit Mahotsav" style="height: 150px;">
+    </div>
+  </div>
+</div>
+  <!-- Navbar -->
+  <nav>
+    <ul>
+      <li><a href="../home/home.html" style="color: white; text-decoration: none;">Home</a></li>
+      <li><a href="../profile/profile.html" style="color: white; text-decoration: none;">Profile</a></li>
+      <li class="active"><a href="../passbook/passbook.html" style="color: white; text-decoration: none;">Passbook</a></li>
+      <li><a href="../claim/claims.html" style="color: white; text-decoration: none;">Claim</a></li>
+      <li><a href="../service/service-history.html" style="color: white; text-decoration: none;">Service History</a></li>
+      <li>Calculators
+        <ul>
+          <li>EPF Calculator</li>
+          <li>EDLI Calculator</li>
+          <li>Pension Calculator</li>
+        </ul>
+      </li>
+    </ul>
+    <div class="user-section">
+      <span class="user-name">SAJEELA K</span>
+      <button class="logout-btn">Logout</button>
+    </div>
+  </nav>
+  <div class="container" style="margin-top: 10px;">
+    <!-- Member Selection -->
+    <div class="member-select">
+      <label for="memberId">Select Member ID:</label>
+      <select id="memberId" onchange="updateData()">
+        <option value="KDMAL00415050005043918">KDMAL00415050005043918</option>
+        <option value="TNMAS00544340000010487">TNMAS00544340000010487</option>
+        <option value="APHYD14894460000085845">APHYD14894460000085845</option>
+        <option value="TBTAM00496940000660048">TBTAM00496940000660048</option>
+        <option value="TNMAS00503240000016034">TNMAS00503240000016034</option>
+        <option value="PYBOM00130150001085403">PYBOM00130150001085403</option>
+      </select>
+    </div>
+
+    <!-- Passbook Overview -->
+    <div class="card">
+      <h2>Passbook Overview - <span id="selectedMemberId">KDMAL00415050005043918</span></h2>
+      <table id="passbookTable">
+        <tr>
+          <th>Current Balance</th>
+          <th>Adjustments (Balance)</th>
+          <th>Employee Contribution</th>
+          <th>Employer Contribution</th>
+          <th>Interest Earned</th>
+          <th>Transfer-Ins/VDR</th>
+          <th>Total PF Withdrawal</th>
+        </tr>
+        <tr>
+          <td><span class="highlight" id="currentBalance">₹ 1,35,514</span></td>
+          <td id="adjustments">₹ 0</td>
+          <td id="employeeContrib">₹ 72,000</td>
+          <td id="employerContrib">₹ 22,000</td>
+          <td id="interestEarned">₹ 1,679</td>
+          <td id="transferIns">₹ 39,835</td>
+          <td><span class="danger" id="totalWithdrawal">₹ 0</span></td>
+        </tr>
+      </table>
+      <p class="note">ℹ️ Last Contribution made for the month of May-2025</p>
+    </div>
+
+    <!-- Contribution Chart -->
+    <div class="card">
+      <h2>Contribution Summary in last 12 years</h2>
+      <canvas id="myChart"></canvas>
+    </div>
+  </div>
+    <!-- Footer -->
+  <footer>
+    EPFO | Member Portal | EPFO Grievance Portal <br>
+    © Employees' Provident Fund Organisation, Designed, Developed and Hosted @ DR, Secunderabad <br>
+    [ Ver - 1.2.17 , 08-Jul-2025 ]
+  </footer>
+
+  <!-- Chart.js -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="../js/login.js"></script>
+  <script>
+    let myChart;
+
+    // Random data for each member
+    const memberData = {
+      'KDMAL00415050005043918': {
+        currentBalance: 135514,
+        adjustments: 0,
+        employeeContrib: 72000,
+        employerContrib: 22000,
+        interestEarned: 1679,
+        transferIns: 39835,
+        totalWithdrawal: 0,
+        chartData: {
+          labels: ['2021', '2022', '2023', '2024', '2025'],
+          datasets: [
+            { label: 'Employee Contribution', data: [14000, 15000, 16000, 18000, 20000], backgroundColor: '#1d2d50' },
+            { label: 'Employer Contribution', data: [6000, 6500, 7000, 7500, 8000], backgroundColor: '#c9a227' },
+            { label: 'Interest', data: [300, 400, 500, 600, 700], backgroundColor: '#7c9473' }
+          ]
+        }
+      },
+      'TNMAS00544340000010487': {
+        currentBalance: 0,
+        adjustments: 0,
+        employeeContrib: 0,
+        employerContrib: 0,
+        interestEarned: 0,
+        transferIns: 0,
+        totalWithdrawal: 0,
+        chartData: {
+          labels: ['2021', '2022', '2023', '2024', '2025'],
+          datasets: [
+            { label: 'Employee Contribution', data: [0, 0, 0, 0, 0], backgroundColor: '#1d2d50' },
+            { label: 'Employer Contribution', data: [0, 0, 0, 0, 0], backgroundColor: '#c9a227' },
+            { label: 'Interest', data: [0,0, 0, 0, 0], backgroundColor: '#7c9473' }
+          ]
+        }
+      },
+      'APHYD14894460000085845': {
+        currentBalance:0,
+        adjustments: 0,
+        employeeContrib: 0,
+        employerContrib: 0,
+        interestEarned: 0,
+        transferIns: 0,
+        totalWithdrawal: 0,
+        chartData: {
+          labels: ['2021', '2022', '2023', '2024', '2025'],
+          datasets: [
+            { label: 'Employee Contribution', data: [0, 0, 0, 0, 0], backgroundColor: '#1d2d50' },
+            { label: 'Employer Contribution', data: [0, 0, 0,0, 0], backgroundColor: '#c9a227' },
+            { label: 'Interest', data: [0, 0, 0, 0, 0], backgroundColor: '#7c9473' }
+          ]
+        }
+      },
+      'TBTAM00496940000660048': {
+        currentBalance: 65000,
+        adjustments: 0,
+        employeeContrib: 32000,
+        employerContrib: 10000,
+        interestEarned: 800,
+        transferIns: 18000,
+        totalWithdrawal: 0,
+        chartData: {
+          labels: ['2021', '2022', '2023', '2024', '2025'],
+          datasets: [
+            { label: 'Employee Contribution', data: [0, 0, 0, 0, 0], backgroundColor: '#1d2d50' },
+            { label: 'Employer Contribution', data: [0, 0, 0, 0, 0], backgroundColor: '#c9a227' },
+            { label: 'Interest', data: [0, 0, 0, 0, 0], backgroundColor: '#7c9473' }
+          ]
+        }
+      },
+      'TNMAS00503240000016034': {
+        currentBalance: 0,
+        adjustments: 0,
+        employeeContrib: 0,
+        employerContrib: 0,
+        interestEarned: 0,
+        transferIns: 0,
+        totalWithdrawal: 0,
+        chartData: {
+          labels: ['2021', '2022', '2023', '2024', '2025'],
+          datasets: [
+            { label: 'Employee Contribution', data: [0, 0, 0, 0, 0], backgroundColor: '#1d2d50' },
+            { label: 'Employer Contribution', data: [0, 0, 0, 0, 0], backgroundColor: '#c9a227' },
+            { label: 'Interest', data: [0, 0, 0, 0, 0], backgroundColor: '#7c9473' }
+          ]
+        }
+      },
+      'PYBOM00130150001085403': {
+        currentBalance: 0,
+        adjustments: 0,
+        employeeContrib: 0,
+        employerContrib: 0,
+        interestEarned: 0,
+        transferIns: 0,
+        totalWithdrawal: 0,
+        chartData: {
+          labels: ['2021', '2022', '2023', '2024', '2025'],
+          datasets: [
+            { label: 'Employee Contribution', data: [0, 0,0, 0, 0], backgroundColor: '#1d2d50' },
+            { label: 'Employer Contribution', data: [0,0, 0, 0, 0], backgroundColor: '#c9a227' },
+            { label: 'Interest', data: [0, 0, 0, 0, 0], backgroundColor: '#7c9473' }
+          ]
+        }
+      }
+    };
+
+    // Initialize chart
+    function initChart(data) {
+      const ctx = document.getElementById('myChart').getContext('2d');
+      if (myChart) myChart.destroy();
+      myChart = new Chart(ctx, {
+        type: 'bar',
+        data: data.chartData,
+        options: {
+          responsive: true,
+          plugins: { legend: { position: 'top' } },
+          scales: { y: { beginAtZero: true } }
+        }
+      });
+    }
+
+    // Update data and chart based on selected member
+    function updateData() {
+      const memberId = document.getElementById('memberId').value;
+      const data = memberData[memberId];
+
+      document.getElementById('selectedMemberId').textContent = memberId;
+      document.getElementById('currentBalance').textContent = `₹ ${data.currentBalance.toLocaleString()}`;
+      document.getElementById('adjustments').textContent = `₹ ${data.adjustments.toLocaleString()}`;
+      document.getElementById('employeeContrib').textContent = `₹ ${data.employeeContrib.toLocaleString()}`;
+      document.getElementById('employerContrib').textContent = `₹ ${data.employerContrib.toLocaleString()}`;
+      document.getElementById('interestEarned').textContent = `₹ ${data.interestEarned.toLocaleString()}`;
+      document.getElementById('transferIns').textContent = `₹ ${data.transferIns.toLocaleString()}`;
+      document.getElementById('totalWithdrawal').textContent = `₹ ${data.totalWithdrawal.toLocaleString()}`;
+
+      initChart(data);
+    }
+
+    // Initialize with default member
+    document.addEventListener('DOMContentLoaded', () => {
+      updateData();
+    });
+  </script>
+</body>
+</html>
