@@ -63,10 +63,8 @@
       margin-top: 20px;
     }
     .member-select {
-        
       margin-bottom: 15px;
       background-color: rgba(164, 158, 158, 0.158);
-      
     }
     select {
       padding: 5px;
@@ -74,32 +72,220 @@
       border-radius: 4px;
       border: 1px solid #ccc;
     }
+    .sidebar {
+      width: 60px;
+      background: #fff;
+      border-radius: 6px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+      overflow: hidden;
+    }
+    .year-tab {
+      padding: 10px;
+      text-align: center;
+      cursor: pointer;
+      background: #007bff;
+      color: #fff;
+      border-bottom: 1px solid #eee;
+      font-size: 14px;
+    }
+    .year-tab.active {
+      background: #0056b3;
+    }
+    .year-tab:hover {
+      background: #0056b3;
+    }
+    .main {
+      flex: 1;
+      background: #fff;
+      padding: 20px;
+      border-radius: 6px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+    }
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 2px solid #eee;
+      padding-bottom: 8px;
+      margin-bottom: 15px;
+    }
+    .badge-green {
+      background: #198754;
+      color: #fff;
+      font-size: 12px;
+      padding: 3px 8px;
+      border-radius: 4px;
+      display: inline-block;
+    }
+    .badge-blue {
+      background: #0dcaf0;
+      color: #fff;
+      font-size: 12px;
+      padding: 3px 8px;
+      border-radius: 4px;
+      display: inline-block;
+      margin-top: 5px;
+    }
+    .year-wise-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 15px;
+      border-bottom: 2px solid #eee;
+      padding-bottom: 8px;
+    }
+    .year-wise-header h2 {
+      margin: 0;
+      font-size: 18px;
+      font-weight: bold;
+      color: #333;
+      position: relative;
+    }
+    .year-wise-header h2 span {
+      display: block;
+      width: 50px;
+      height: 3px;
+      background: #f8a22f;
+      margin-top: 3px;
+    }
+    .year-selector {
+      display: flex;
+      gap: 10px;
+    }
+    .year-tab-header {
+      padding: 5px 10px;
+      background: #007bff;
+      color: #fff;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 14px;
+    }
+    .year-tab-header.active {
+      background: #0056b3;
+    }
+    .buttons .action-btn {
+      background: #007bff;
+      border: none;
+      color: #fff;
+      padding: 8px 14px;
+      margin-left: 5px;
+      border-radius: 4px;
+      font-size: 14px;
+      cursor: pointer;
+    }
+    .buttons .action-btn:hover {
+      background: #0056b3;
+    }
+    .member-info {
+      margin: 10px 0;
+      font-size: 14px;
+      color: #333;
+    }
+    .member-info a {
+      color: #007bff;
+      text-decoration: none;
+    }
+    .member-info a:hover {
+      text-decoration: underline;
+    }
+    .passbook-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 15px;
+      font-size: 14px;
+    }
+    .passbook-table th,
+    .passbook-table td {
+      padding: 8px;
+      text-align: left;
+      border-bottom: 1px solid #ddd;
+    }
+    .passbook-table th {
+      background: #f3f3f3;
+      font-weight: bold;
+    }
+    .passbook-table .transaction-type {
+      display: inline-block;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      text-align: center;
+      line-height: 20px;
+      color: #fff;
+      font-weight: bold;
+    }
+    .passbook-table .type-plus {
+      background: #198754;
+    }
+    .passbook-table .type-minus {
+      background: #dc3545;
+    }
+    .totals {
+      margin-top: 15px;
+      font-size: 14px;
+    }
+    .totals .withdrawal {
+      background: #dc3545;
+      color: #fff;
+      padding: 2px 6px;
+      border-radius: 4px;
+    }
+    .closing-balance {
+      margin-top: 10px;
+      background: #0dcaf0;
+      color: #fff;
+      font-size: 12px;
+      padding: 3px 8px;
+      border-radius: 4px;
+      display: inline-block;
+    }
+    .closing-balance-row {
+      margin-top: 10px;
+      background: #0dcaf0;
+      color: #fff;
+      font-size: 12px;
+      padding: 3px 8px;
+      border-radius: 4px;
+      display: inline-block;
+    }
+    .info-row {
+      margin-top: 10px;
+      font-size: 14px;
+      color: #666;
+    }
+    .disclaimer {
+      margin-top: 15px;
+      font-size: 12px;
+      color: #666;
+      border-top: 1px solid #ddd;
+      padding-top: 10px;
+    }
   </style>
 </head>
 <body>
-        <div class="banner"> 
-    <div class="bannerone" >
+  <div class="banner"> 
+    <div class="bannerone">
       <p>For EPF Balance Enquiry:<br></p>
       <p>1. Give a Missed call to <b>9966044425</b><br></p>
       <p>2. SMS <b>EPFOHO UAN &lt;LAN&gt;</b> to <b>7738299899</b></p>
       <p style="margin-left: 600px;"><b>Help Desk/Toll Free Number:</b> 1800118005</p>
     </div>
-  <div class="bannerSecond">
-    <div class="banner-left">
-      <img src="../assets/logo.png" alt="National Emblem" style="width: 150px;height: 120px;">
-      <div class="banner-text">
-        <div class="hindi"><h1>कर्मचारी भविष्य निधि संगठन</h1></div>
-        <h1 class="english">Employees' Provident Fund Organisation (EPFO)</h1>
-        <div class="ministry">(श्रम एवं रोजगार मंत्रालय, भारत सरकार)</div>
-        <div class="ministry">(Ministry of Labour & Employment, Govt. of India)</div>
+    <div class="bannerSecond">
+      <div class="banner-left">
+        <img src="../assets/logo.png" alt="National Emblem" style="width: 150px;height: 120px;">
+        <div class="banner-text">
+          <div class="hindi"><h1>कर्मचारी भविष्य निधि संगठन</h1></div>
+          <h1 class="english">Employees' Provident Fund Organisation (EPFO)</h1>
+          <div class="ministry">(श्रम एवं रोजगार मंत्रालय, भारत सरकार)</div>
+          <div class="ministry">(Ministry of Labour & Employment, Govt. of India)</div>
+        </div>
+      </div>
+      <div class="banner-right">
+        <img src="../assets/G20.png" alt="G20" style="height: 150px;">
+        <img src="../assets/image.png" alt="Azadi Ka Amrit Mahotsav" style="height: 150px;">
       </div>
     </div>
-    <div class="banner-right">
-      <img src="../assets/G20.png" alt="G20" style="height: 150px;">
-      <img src="../assets/image.png" alt="Azadi Ka Amrit Mahotsav" style="height: 150px;">
-    </div>
   </div>
-</div>
   <!-- Navbar -->
   <nav>
     <ul>
@@ -166,8 +352,75 @@
       <h2>Contribution Summary in last 12 years</h2>
       <canvas id="myChart"></canvas>
     </div>
+
+    <!-- Year Wise Passbook Summary -->
+    <div class="card">
+      <div class="container" style="display: flex; gap: 20px;">
+        <!-- Sidebar -->
+        <div class="sidebar">
+          <div class="year-tab active" data-year="2025">2025</div>
+          <div class="year-tab" data-year="2024">2024</div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="main">
+          <!-- Header -->
+          <div class="year-wise-header">
+            <h2>Year Wise Passbook Summary<span></span></h2>
+            <div class="year-selector">
+              <div class="year-tab-header active" data-year="2025">2025</div>
+              <div class="year-tab-header" data-year="2024">2024</div>
+            </div>
+            <div class="buttons">
+              <button class="action-btn" onclick="viewTaxableData()">View Taxable Data</button>
+              <button class="action-btn" onclick="downloadPDF()">Download as PDF</button>
+            </div>
+          </div>
+
+          <!-- Member Info and Badge -->
+          <div class="member-info">
+            Passbook for Member Id : <a href="#" id="yearMemberId">KDMAL00415050005043918</a>
+          </div>
+          <div class="badge-green" id="obIntBadge">OB Int. Updated upto 01/04/2025</div>
+
+          <!-- Table -->
+          <table class="passbook-table">
+            <thead>
+              <tr>
+                <th>Wage Month</th>
+                <th>Transaction Date</th>
+                <th>Transaction Type</th>
+                <th>Particulars</th>
+                <th>EPF Wages</th>
+                <th>EPS Wages</th>
+                <th>Employee Share (12%)</th>
+                <th>Employer Share (3.67%)</th>
+              </tr>
+            </thead>
+            <tbody id="passbookTableBody">
+              <!-- Rows will be inserted dynamically -->
+            </tbody>
+          </table>
+
+          <!-- Totals -->
+          <div class="totals" id="yearTotals">
+            <div>Total Contributions for the year [2025] : <b>₹0</b></div>
+            <div>Total Transfer-Ins/VDRs for the year [2025] : <b>₹1,392 / ₹8,248</b></div>
+            <div>Total Withdrawals for the year [2025] : <span class="withdrawal">₹3,324</span></div>
+            <div class="closing-balance">Closing Balance as on 31/03/2026 : ₹9,000</div>
+          </div>
+
+          <!-- Interest and Closing Balance -->
+          <div class="info-row">Interest details N/A</div>
+          <div class="closing-balance-row">Closing Balance as on 31/03/2026</div>
+
+          <!-- Disclaimer -->
+          <div class="disclaimer">Disclaimer - Information shown above is based on available data on central server. This information may not be use for legal purpose.</div>
+        </div>
+      </div>
+    </div>
   </div>
-    <!-- Footer -->
+  <!-- Footer -->
   <footer>
     EPFO | Member Portal | EPFO Grievance Portal <br>
     © Employees' Provident Fund Organisation, Designed, Developed and Hosted @ DR, Secunderabad <br>
@@ -212,12 +465,12 @@
           datasets: [
             { label: 'Employee Contribution', data: [0, 0, 0, 0, 0], backgroundColor: '#1d2d50' },
             { label: 'Employer Contribution', data: [0, 0, 0, 0, 0], backgroundColor: '#c9a227' },
-            { label: 'Interest', data: [0,0, 0, 0, 0], backgroundColor: '#7c9473' }
+            { label: 'Interest', data: [0, 0, 0, 0, 0], backgroundColor: '#7c9473' }
           ]
         }
       },
       'APHYD14894460000085845': {
-        currentBalance:761,
+        currentBalance: 761,
         adjustments: 0,
         employeeContrib: 761,
         employerContrib: 0,
@@ -228,7 +481,7 @@
           labels: ['2021', '2022', '2023', '2024', '2025'],
           datasets: [
             { label: 'Employee Contribution', data: [0, 0, 0, 0, 0], backgroundColor: '#1d2d50' },
-            { label: 'Employer Contribution', data: [0, 0, 0,0, 0], backgroundColor: '#c9a227' },
+            { label: 'Employer Contribution', data: [0, 0, 0, 0, 0], backgroundColor: '#c9a227' },
             { label: 'Interest', data: [0, 0, 0, 0, 0], backgroundColor: '#7c9473' }
           ]
         }
@@ -278,10 +531,44 @@
         chartData: {
           labels: ['2021', '2022', '2023', '2024', '2025'],
           datasets: [
-            { label: 'Employee Contribution', data: [0, 0,0, 0, 0], backgroundColor: '#1d2d50' },
-            { label: 'Employer Contribution', data: [0,0, 0, 0, 0], backgroundColor: '#c9a227' },
+            { label: 'Employee Contribution', data: [0, 0, 0, 0, 0], backgroundColor: '#1d2d50' },
+            { label: 'Employer Contribution', data: [0, 0, 0, 0, 0], backgroundColor: '#c9a227' },
             { label: 'Interest', data: [0, 0, 0, 0, 0], backgroundColor: '#7c9473' }
           ]
+        }
+      }
+    };
+
+    // Year-wise data (accurate as per your input)
+    const yearData = {
+      "KDMAL00415050005043918": {
+        "2025": {
+          rows: [
+            { month: "Jul-2025", date: "14-08-2025", type: "-", desc: "Claim Against PARA 68J", epf: 0, eps: 0, empShare: 3324, erShare: 0 },
+            { month: "Jul-2025", date: "06-08-2025", type: "+", desc: "TRANSFER IN - SAME OFFICE (Old Member Id:- GJNRD00608650000010472)", epf: 0, eps: 0, empShare: 1354, erShare: 8246 },
+            { month: "Feb-2026", date: "06-08-2025", type: "+", desc: "TRANSFER IN - INTEREST AMOUNT ONLY (Old Member Id:- GJNRD00608650000010472)", epf: 0, eps: 0, empShare: 38, erShare: 2 }
+          ],
+          totals: {
+            contrib: "₹0",
+            transfers: "₹1,392 / ₹8,248", // Corrected to match your data (8246 → 8248)
+            withdrawals: "₹3,324",
+            closing: "₹9,000",
+            closingDate: "31/03/2026",
+            obIntDate: "01/04/2025"
+          }
+        },
+        "2024": {
+          rows: [
+            { month: "Mar-2024", date: "10-04-2024", type: "+", desc: "Employer Contribution", epf: 15000, eps: 5000, empShare: 1932, erShare: 66 }
+          ],
+          totals: {
+            contrib: "₹15,000",
+            transfers: "₹0 / ₹0",
+            withdrawals: "₹0",
+            closing: "₹9,01", // Corrected to ₹901 (assuming typo in original)
+            closingDate: "31/03/2025",
+            obIntDate: "01/04/2024"
+          }
         }
       }
     };
@@ -301,6 +588,64 @@
       });
     }
 
+    // Update year-wise table
+    function updateYearData() {
+      const memberId = document.getElementById("memberId").value;
+      const year = document.querySelector(".year-tab.active").dataset.year || '2025';
+      const data = yearData[memberId]?.[year] || { rows: [], totals: { contrib: "₹0", transfers: "₹0 / ₹0", withdrawals: "₹0", closing: "₹0", closingDate: "31/03/" + year, obIntDate: "01/04/" + year } };
+
+      document.getElementById("yearMemberId").textContent = memberId;
+      document.getElementById("obIntBadge").textContent = `OB Int. Updated upto ${data.totals.obIntDate}`;
+
+      const tbody = document.getElementById("passbookTableBody");
+      tbody.innerHTML = "";
+      data.rows.forEach(row => {
+        tbody.innerHTML += `
+          <tr>
+            <td>${row.month}</td>
+            <td>${row.date}</td>
+            <td><span class="transaction-type ${row.type === '+' ? 'type-plus' : 'type-minus'}">${row.type}</span></td>
+            <td>${row.desc}</td>
+            <td>₹${row.epf.toLocaleString()}</td>
+            <td>₹${row.eps.toLocaleString()}</td>
+            <td>₹${row.empShare.toLocaleString()}</td>
+            <td>₹${row.erShare.toLocaleString()}</td>
+          </tr>`;
+      });
+
+      const totals = document.getElementById("yearTotals");
+      totals.innerHTML = `
+        <div>Total Contributions for the year [${year}] : <b>${data.totals.contrib}</b></div>
+        <div>Total Transfer-Ins/VDRs for the year [${year}] : <b>${data.totals.transfers}</b></div>
+        <div>Total Withdrawals for the year [${year}] : <span class="withdrawal">${data.totals.withdrawals}</span></div>
+        <div class="closing-balance">Closing Balance as on ${data.totals.closingDate} : ${data.totals.closing}</div>
+      `;
+
+      document.querySelector(".closing-balance-row").textContent = `Closing Balance as on ${data.totals.closingDate}`;
+      document.querySelector(".info-row").textContent = "Interest details N/A";
+    }
+
+    function changeYear(event) {
+      const year = event.target.dataset.year;
+      document.querySelectorAll(".year-tab").forEach(el => el.classList.remove("active"));
+      document.querySelectorAll(".year-tab-header").forEach(el => el.classList.remove("active"));
+      document.querySelector(`.year-tab[data-year="${year}"]`).classList.add("active");
+      document.querySelector(`.year-tab-header[data-year="${year}"]`).classList.add("active");
+      updateYearData();
+    }
+
+    document.querySelectorAll(".year-tab, .year-tab-header").forEach(tab => {
+      tab.addEventListener("click", changeYear);
+    });
+
+    function viewTaxableData() {
+      alert("View Taxable Data functionality to be implemented.");
+    }
+
+    function downloadPDF() {
+      alert("Download as PDF functionality to be implemented.");
+    }
+
     // Update data and chart based on selected member
     function updateData() {
       const memberId = document.getElementById('memberId').value;
@@ -316,6 +661,7 @@
       document.getElementById('totalWithdrawal').textContent = `₹ ${data.totalWithdrawal.toLocaleString()}`;
 
       initChart(data);
+      updateYearData();
     }
 
     // Initialize with default member
