@@ -86,7 +86,6 @@
       background: #007bff;
       color: #fff;
       border-bottom: 1px solid #eee;
-      font-size: 14px;
     }
     .year-tab.active {
       background: #0056b3;
@@ -139,14 +138,6 @@
       font-size: 18px;
       font-weight: bold;
       color: #333;
-      position: relative;
-    }
-    .year-wise-header h2 span {
-      display: block;
-      width: 50px;
-      height: 3px;
-      background: #f8a22f;
-      margin-top: 3px;
     }
     .year-selector {
       display: flex;
@@ -158,7 +149,6 @@
       color: #fff;
       border-radius: 4px;
       cursor: pointer;
-      font-size: 14px;
     }
     .year-tab-header.active {
       background: #0056b3;
@@ -212,7 +202,6 @@
       text-align: center;
       line-height: 20px;
       color: #fff;
-      font-weight: bold;
     }
     .passbook-table .type-plus {
       background: #198754;
@@ -366,7 +355,7 @@
         <div class="main">
           <!-- Header -->
           <div class="year-wise-header">
-            <h2>Year Wise Passbook Summary<span></span></h2>
+            <h2>Year Wise Passbook Summary</h2>
             <div class="year-selector">
               <div class="year-tab-header active" data-year="2025">2025</div>
               <div class="year-tab-header" data-year="2024">2024</div>
@@ -405,7 +394,7 @@
           <!-- Totals -->
           <div class="totals" id="yearTotals">
             <div>Total Contributions for the year [2025] : <b>₹0</b></div>
-            <div>Total Transfer-Ins/VDRs for the year [2025] : <b>₹1,392 / ₹8,248</b></div>
+            <div>Total Transfer-Ins/VDRs for the year [2025] : <b>₹1,392 / ₹8,448</b></div>
             <div>Total Withdrawals for the year [2025] : <span class="withdrawal">₹3,324</span></div>
             <div class="closing-balance">Closing Balance as on 31/03/2026 : ₹9,000</div>
           </div>
@@ -539,7 +528,7 @@
       }
     };
 
-    // Year-wise data (accurate as per your input)
+    // Year-wise data
     const yearData = {
       "KDMAL00415050005043918": {
         "2025": {
@@ -550,12 +539,12 @@
           ],
           totals: {
             contrib: "₹0",
-            transfers: "₹1,392 / ₹8,248", // Corrected to match your data (8246 → 8248)
+            transfers: "₹1,392 / ₹8,448",
             withdrawals: "₹3,324",
             closing: "₹9,000",
-            closingDate: "31/03/2026",
-            obIntDate: "01/04/2025"
-          }
+            closingDate: "31/03/2026"
+          },
+          obIntDate: "01/04/2025"
         },
         "2024": {
           rows: [
@@ -565,10 +554,10 @@
             contrib: "₹15,000",
             transfers: "₹0 / ₹0",
             withdrawals: "₹0",
-            closing: "₹9,01", // Corrected to ₹901 (assuming typo in original)
-            closingDate: "31/03/2025",
-            obIntDate: "01/04/2024"
-          }
+            closing: "₹9,01",
+            closingDate: "31/03/2025"
+          },
+          obIntDate: "01/04/2024"
         }
       }
     };
@@ -592,10 +581,10 @@
     function updateYearData() {
       const memberId = document.getElementById("memberId").value;
       const year = document.querySelector(".year-tab.active").dataset.year || '2025';
-      const data = yearData[memberId]?.[year] || { rows: [], totals: { contrib: "₹0", transfers: "₹0 / ₹0", withdrawals: "₹0", closing: "₹0", closingDate: "31/03/" + year, obIntDate: "01/04/" + year } };
+      const data = yearData[memberId]?.[year] || { rows: [], totals: { contrib: "₹0", transfers: "₹0 / ₹0", withdrawals: "₹0", closing: "₹0", closingDate: "31/03/" + year }, obIntDate: "01/04/" + year };
 
       document.getElementById("yearMemberId").textContent = memberId;
-      document.getElementById("obIntBadge").textContent = `OB Int. Updated upto ${data.totals.obIntDate}`;
+      document.getElementById("obIntBadge").textContent = `OB Int. Updated upto ${data.obIntDate}`;
 
       const tbody = document.getElementById("passbookTableBody");
       tbody.innerHTML = "";
@@ -622,7 +611,6 @@
       `;
 
       document.querySelector(".closing-balance-row").textContent = `Closing Balance as on ${data.totals.closingDate}`;
-      document.querySelector(".info-row").textContent = "Interest details N/A";
     }
 
     function changeYear(event) {
